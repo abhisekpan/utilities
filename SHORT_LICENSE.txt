@@ -1,4 +1,4 @@
-Copyright (C) 2012  Abhisek Pan, Purdue University
+Copyright (C) 2012  Abhisek Pan, Purdue University. All rights reserved.
 
 This file is distributed under the University of Illinois/NCSA Open Source License. 
 You can obtain a soft copy of the license either by visiting http://otm.illinois.edu/uiuc_openSource, or by mailing pana@purdue.edu.
