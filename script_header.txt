@@ -1,0 +1,36 @@
+Short Description of the script.
+
+NAME
+    script-name
+
+SYNOPSYS
+    ./script-name <option1> <option2>
+
+DESCRIPTION
+    More detailed description.
+        
+OPTIONS
+    <option1>
+        option1 description
+    
+    <option2>
+        option2 description
+    
+EXAMPLES
+    ./script-name opt1-value opt2-value
+
+NOTES    
+
+AUTHOR
+    Abhisek Pan, pana@purdue.edu
+
+LICENSE
+    Copyright (C) 2012  Abhisek Pan, Purdue University. All rights reserved.
+
+    This file is distributed under the University of Illinois/NCSA Open Source
+    License. 
+    You can obtain a soft copy of the license either by visiting
+    http://otm.illinois.edu/uiuc_openSource, or by mailing pana@purdue.edu.
+
+VERSION
+    1.0
