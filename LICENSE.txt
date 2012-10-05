@@ -1,4 +1,4 @@
-Copyright (c) <2012> <Purdue University>. All rights reserved.
+Copyright (c) <2012> <Abhisek Pan, Purdue University>. All rights reserved.
 
 Developed by: <Abhisek Pan>
 <Purdue University>
