@@ -1,0 +1,11 @@
+This has assorted stuff that I need commonly. Some points to note:
+===============================================================================
+1. Vim Setup
+===============================================================================
+To use the static python checker in vim, we need to install flake8.
+First install easy_install if it is not present.
+    sudo apt-get install python-setuptools
+Then install pip.
+    sudo easy-install pip
+Then install flake8 using pip:
+    pip install flake9
