@@ -1,4 +1,4 @@
-call pathogen#infect()
+" call pathogen#infect()
 syntax on
 filetype plugin on " Use filetype plugin
 
@@ -10,7 +10,7 @@ set softtabstop=4
 set shiftwidth=4
 filetype indent on " Use file-type based indentation
 set cino=i-s " Initializer lists at the same level as constructor
-set tabstop=8
+set tabstop=4
 set cindent
 
 " Other Options
@@ -21,15 +21,79 @@ set showcmd " Display an incomplete command in the lower right corner
 if exists('+colorcolumn')
     set colorcolumn=79
 else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
+    au BufWinEnter * let w:m2=matchadd('TODO', '\%>79v.\+', -1)
 endif
+set number  " show line numbers
+set tags=./tags;~/src
+set nocompatible              " be iMproved, required
 
-" Custom commands
-" Remove trailing whitespace
-command RTW %s/\s\+$//e
+"=============
+" Vundle start
+"=============
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Keep Plugin commands between vundle#begin/end.
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+"for enhanced c++ highlighting (c++14)
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+
+ " solarized color scheme 
+Bundle 'altercation/vim-colors-solarized'
+
+" Plugin 'Valloric/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+   "filetype plugin on
+   "
+   " Brief help
+   " :PluginList       - lists configured plugins
+   " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+   " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+   " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+   "
+   " see :h vundle for more details or wiki for FAQ
+   " Put your non-Plugin stuff after this line
+"=============
+" Vundle end
+"=============
+
+" Color scheme
+syntax enable
+set background=dark
+let g:solarized_bold=0
+colorscheme solarized
+
+"highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$/
+
+"Remove trailing whitespace
+function! s:StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+command RTW call s:StripTrailingWhitespaces()
 
 " Maps
-" jj = escape 
+" jj = escape
 inoremap jj <ESC>
 " \p = parenthesis around a word
 nmap \p i(<Esc>ea)<Esc>
